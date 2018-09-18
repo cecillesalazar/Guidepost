@@ -1,3 +1,3 @@
-const Link = require('../models/link');
+const Post = require('../models/post');
 
-module.exports = async () => await Link.find();
+module.exports = async () => await Post.find();
