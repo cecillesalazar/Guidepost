@@ -6,7 +6,7 @@ const Query = require('./queries');
 const typeDefs='./schema.graphql';
 
 const resolvers = {
-  // Query,
+  Query,
   Mutation: {
     post: async (root, args) => {
       return await Post.create({
