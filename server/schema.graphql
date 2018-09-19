@@ -1,11 +1,7 @@
 type Query {
-  feed: [Advice!]!
-  advice(id: ID!): Advice!
-}
-type Mutation {
-  post(url: String!, description: String!): Advice!
+  advice(id: ID!): [Advice!]
 }
 
 type Advice {
-  post: String!
+  advice: String!
 }
