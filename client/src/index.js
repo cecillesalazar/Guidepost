@@ -19,17 +19,16 @@ const client = new ApolloClient({
 });
 
 // With a Promise
-client.query({
-  query: gql`
-  {
-    feed{
-      description
-      url
-    }
-  }
-  `
-})
-.then(response => console.log(response.data));
+// client.query({
+//   query: gql`
+//   {
+//     feed{
+//       customAdvice
+//     }
+//   }
+//   `
+// })
+// .then(response => console.log(response.data));
 
 // With async/await
 const feed = async () => {
@@ -37,8 +36,7 @@ const feed = async () => {
     query: gql`
     {
       feed{
-        description
-        url
+        customAdvice
       }
     }
     `

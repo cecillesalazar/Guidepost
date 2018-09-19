@@ -1,9 +1,8 @@
 import gql from "graphql-tag";
 
 export const FEED_QUERY = gql`{
-  feed{
+  feed {
     id
-    description
-    url
+    customAdvice
   }
 }`;

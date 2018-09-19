@@ -1,10 +1,9 @@
 import gql from "graphql-tag";
 
-export const CREATE_LINK = gql`
-mutation PostMutation($description: String!, $url: String!){
-  post(description: $description, url: $url) {
+export const CREATE_ADVICE = gql`
+mutation PostAdviceMutation($customAdvice: String!){
+  postAdvice(customAdvice: $customAdvice) {
     id
-    description
-    url
+    customAdvice
   }
 }`;
