@@ -1,12 +1,20 @@
 const mongoose = require('mongoose');
 const { DATABASE_URL } = require('./config');
 const { GraphQLServer } = require('graphql-yoga');
-const Post = require('./models/post');
+const User = require('./models/user');
 const Query = require('./queries');
 const typeDefs='./schema.graphql';
 
 const resolvers = {
-  Query
+  Query,
+  Mutation: {
+    post: async (root, args) => {
+      return await User.create({
+        username: args.username,
+        password: args.password
+      })
+    }
+  }
 }
 
 const server = new GraphQLServer({

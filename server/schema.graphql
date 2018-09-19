@@ -1,3 +1,13 @@
 type Query {
   advice: String!
 }
+
+type Mutation {
+  post(username: String!, password: String!): User!
+}
+
+type User {
+  id: ID!
+  username: String!
+  password: String!
+}
