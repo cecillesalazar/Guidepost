@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Advice } from './Advice';
+import { GenerateAdvice } from './GenerateAdvice';
 import { CreateAdvice } from './CreateAdvice';
 
 class App extends Component {
@@ -30,8 +31,9 @@ class App extends Component {
           <h1 className="App-title">Guidepost</h1>
         </header>
         <p className="App-intro">
-          Intro Text Here
+          Your Daily Guidepost
         </p>
+        <GenerateAdvice />
         <CreateAdvice />
         <Advice />
       </div>
