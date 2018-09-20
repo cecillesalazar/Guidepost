@@ -6,6 +6,12 @@ type Query {
 type Mutation {
   post(username: String!, password: String!): User!
   postAdvice(customAdvice: String!): Advice!
+  login(username: String!, password: String!): Payload!
+}
+
+type Payload {
+  token: String
+  user: User
 }
 
 type User {
