@@ -10,7 +10,8 @@ export class Advice extends Component{
           if(loading) return <div>Fetching...</div>
           if(error) return <div>Error {error}</div>
           const adviceList = data.feed;
-          return <ul>{adviceList.map(advice => <li key={advice.id}>{advice.customAdvice}</li>)}</ul>
+          const filteredAdvice = adviceList.map(advice => advice.customAdvice);
+          return <h1>{filteredAdvice[Math.floor(Math.random() * filteredAdvice.length)]}</h1>
         }}
         </Query>
       )
