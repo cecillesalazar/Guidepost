@@ -1,25 +1,20 @@
 type Query {
-  info: String!
-  feed: [Link!]!
-  starwars(id: ID!): Person!
-  students: [Student!]!
+  advice: String!
+  feed: [Advice!]!
 }
+
 type Mutation {
-  post(url: String!, description: String!): Link!
+  post(username: String!, password: String!): User!
+  postAdvice(customAdvice: String!): Advice!
 }
-type Student {
+
+type User {
   id: ID!
   username: String!
-  task: String!
+  password: String!
 }
-type Person {
-  name: String!
-  height: Int!
-  mass: Int!
-  gender: String!
-}
-type Link {
+
+type Advice {
   id: ID!
-  description: String!
-  url: String!
+  customAdvice: String!
 }

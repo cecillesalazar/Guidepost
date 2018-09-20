@@ -1,44 +1,60 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Links } from './Links';
-import { CreateLink } from './CreateLink';
+import { Advice } from './Advice';
+import { GenerateAdvice } from './GenerateAdvice';
+import { CreateAdvice } from './CreateAdvice';
 
 class App extends Component {
-  componentDidMount(){
-    var query = `{
-      feed{
-        description
-        url
-      }
-    }`;
-    fetch('http://localhost:4000', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        query
-      })
-    })
-      .then(res => res.json())
-      .then(res => console.log(res.data));
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      customAdviceButton: false
+    }
   }
+
+  toggleAdviceView(bool) {
+    this.setState({
+      customAdviceButton: bool
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <CreateLink />
-        <Links />
-      </div>
-    );
+    if(!this.state.customAdviceButton) {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Guidepost</h1>
+          </header>
+          <p className="App-intro">
+            Your Daily Guidepost
+          </p>
+          <GenerateAdvice />
+          <CreateAdvice />
+          <div className="custom-advice-button">
+            <p>Want to use your own guidepost for todays daily advice?</p>
+            <button type="button" onClick={() => this.toggleAdviceView(true)}>Get Advice!</button>
+          </div>
+        </div>
+      );
+    } else if(this.state.customAdviceButton) {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Guidepost</h1>
+          </header>
+          <p className="App-intro">
+            Your Custom Guidepost
+          </p>
+          <Advice />
+          <CreateAdvice />
+          <div className="custom-advice-button">
+            <p>Want to use a randomized guidepost for todays daily advice?</p>
+            <button type="button" onClick={() => this.toggleAdviceView(false)}>Get Advice!</button>
+          </div>
+        </div>
+      )
+    }
   }
 }
 

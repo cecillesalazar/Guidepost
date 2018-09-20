@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const LinkSchema = new mongoose.Schema({
-  url: String,
-  description: String
+const UserSchema = new mongoose.Schema({
+  username: String,
+  password: String
 });
 
-LinkSchema.set('toObject', {
+UserSchema.set('toObject', {
   virtuals: true,
   versionKey: false,
   transform: (doc, ret) => {
@@ -14,4 +14,4 @@ LinkSchema.set('toObject', {
   }
 });
 
-module.exports = mongoose.model('Link', LinkSchema);
+module.exports = mongoose.model('User', UserSchema);
