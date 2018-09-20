@@ -4,7 +4,7 @@ import { Advice } from './Advice';
 import { GenerateAdvice } from './GenerateAdvice';
 import { CreateAdvice } from './CreateAdvice';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   constructor(props) {
     super(props)
 
@@ -57,5 +57,3 @@ class Dashboard extends Component {
     }
   }
 }
-
-export default Dashboard;
