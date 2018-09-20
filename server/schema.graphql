@@ -4,8 +4,8 @@ type Query {
 }
 
 type Mutation {
-  post(username: String!, password: String!): User!
-  postAdvice(customAdvice: String!): Advice!
+  post(customAdvice: String!): Advice!
+  signup(username: String!, password: String!): Payload!
   login(username: String!, password: String!): Payload!
 }
 

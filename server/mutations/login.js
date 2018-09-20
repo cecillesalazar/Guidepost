@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const { JWT_SECRET } = require('../config');
 
 module.exports = async (root, args, context, info) => {
-  const user = await context.userModel.findOne({email: args.email});
+  const user = await context.userModel.findOne({username: args.username});
   if(!user){
     throw new Error('Invalid credentials');
   }

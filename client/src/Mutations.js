@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const CREATE_ADVICE = gql`
-mutation PostAdviceMutation($customAdvice: String!){
-  postAdvice(customAdvice: $customAdvice) {
+mutation PostMutation($customAdvice: String!){
+  post(customAdvice: $customAdvice) {
     id
     customAdvice
   }
