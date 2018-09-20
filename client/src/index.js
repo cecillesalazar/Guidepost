@@ -31,19 +31,19 @@ const client = new ApolloClient({
 // .then(response => console.log(response.data));
 
 // With async/await
-const feed = async () => {
-  await client.query({
-    query: gql`
-    {
-      feed{
-        customAdvice
-      }
-    }
-    `
-  })
-};
+// const feed = async () => {
+//   await client.query({
+//     query: gql`
+//     {
+//       feed{
+//         customAdvice
+//       }
+//     }
+//     `
+//   })
+// };
 
-console.log(feed);
+// console.log(feed);
 
 ReactDOM.render(
   <ApolloProvider client={client}>
