@@ -8,19 +8,8 @@ const typeDefs='./schema.graphql';
 
 const resolvers = {
   Query,
-  Mutation: {
-    post: async (root, args) => {
-      return await User.create({
-        username: args.username,
-        password: args.password
-      })
-    },
-    postAdvice: async (root, args) => {
-      return await Advice.create({
-        customAdvice: args.customAdvice
-      })
-    }
-  }
+  Mutation,
+  User
 }
 
 const server = new GraphQLServer({
