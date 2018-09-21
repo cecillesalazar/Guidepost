@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { AUTH_TOKEN } from './constants'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 export class Header extends Component {
 
@@ -40,3 +40,5 @@ export class Header extends Component {
     )
   }
 }
+
+export const HeaderWithRouter = withRouter(Header);
