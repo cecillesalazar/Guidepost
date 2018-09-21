@@ -27,3 +27,33 @@
   width: 10%;
   padding: .8%;
 }
+
+@media only screen and (max-width: 1050px) {
+  .get-guidepost-button {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .get-guidepost-button {
+    width: 17%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .get-guidepost-button {
+    width: 19%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .get-guidepost-button {
+    width: 23%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .get-guidepost-button {
+    width: 25%;
+  }
+}

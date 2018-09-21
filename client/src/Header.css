@@ -1,0 +1,67 @@
+.logo-header {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.header-container {
+  background-color: black;
+}
+
+.get-started-container {
+  font-family: 'Dosis', sans-serif;
+  position: fixed;
+  font-size: 20px;
+  width: 100%;
+  left: 92%;
+  top: 2%;
+  bottom: 2%;
+  color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .get-started-container {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .get-started-container {
+    left: 90%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .get-started-container {
+    font-size: 16px;
+    left: 87%;
+    top: 1.5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .get-started-container {
+    left: 85%;
+    top: 1%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .get-started-container {
+    font-size: 15px;
+    left: 83%;
+    top: 1%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .get-started-container {
+    left: 82%;
+    top: 1%;
+  }
+}
