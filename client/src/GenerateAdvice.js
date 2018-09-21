@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import { RANDOM_QUERY } from './Queries';
+import './GenerateAdvice.css';
 
 export class GenerateAdvice extends Component{
   render(){
@@ -10,7 +11,7 @@ export class GenerateAdvice extends Component{
           if(loading) return <div>Fetching...</div>
           if(error) return <div>Error {error}</div>
           const randomAdvice = data.advice;
-          return <h1>{randomAdvice}</h1>
+          return <h1 className="random-advice">{`"${randomAdvice}"`}</h1>
         }}
         </Query>
       )

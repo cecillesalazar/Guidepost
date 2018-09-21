@@ -22,35 +22,29 @@ export class Dashboard extends Component {
   render() {
     if(!this.state.customAdviceButton) {
       return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Guidepost</h1>
-          </header>
-          <p className="App-intro">
+        <div className="dashboard">
+          <p className="dashboard-intro">
             Your Daily Guidepost
           </p>
           <GenerateAdvice />
           <CreateAdvice />
           <div className="custom-advice-button">
-            <p>Want to use your own guidepost for todays daily advice?</p>
-            <button type="button" onClick={() => this.toggleAdviceView(true)}>Get Advice!</button>
+            <p className="custom-advice-label">Want to use your own guidepost for today?</p>
+            <button className="get-guidepost-button" type="button" onClick={() => this.toggleAdviceView(true)}>Get Guidepost!</button>
           </div>
         </div>
       );
     } else if(this.state.customAdviceButton) {
       return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Guidepost</h1>
-          </header>
-          <p className="App-intro">
+        <div className="dashboard">
+          <p className="dashboard-intro">
             Your Custom Guidepost
           </p>
           <Advice />
           <CreateAdvice />
           <div className="custom-advice-button">
-            <p>Want to use a randomized guidepost for todays daily advice?</p>
-            <button type="button" onClick={() => this.toggleAdviceView(false)}>Get Advice!</button>
+            <p className="custom-advice-label">Want to use a randomized guidepost for today?</p>
+            <button className="get-guidepost-button" type="button" onClick={() => this.toggleAdviceView(false)}>Get Guidepost!</button>
           </div>
         </div>
       )

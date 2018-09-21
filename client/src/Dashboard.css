@@ -1,28 +1,59 @@
-.App {
+.dashboard {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.dashboard-title {
+  font-size: 15px;
+  font-family: 'Dosis', sans-serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.dashboard-intro {
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  margin-top: 10%;
+
 }
 
-.App-title {
-  font-size: 1.5em;
+.custom-advice-label {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
 
-.App-intro {
-  font-size: large;
+.get-guidepost-button {
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+  border: 2px solid black;
+  background-color: transparent;
+  width: 10%;
+  padding: .8%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media only screen and (max-width: 1050px) {
+  .get-guidepost-button {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .get-guidepost-button {
+    width: 17%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .get-guidepost-button {
+    width: 19%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .get-guidepost-button {
+    width: 23%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .get-guidepost-button {
+    width: 25%;
+  }
 }
