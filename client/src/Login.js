@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { AUTH_TOKEN } from './constants'
 import { Mutation } from 'react-apollo';
 import { SIGNUP_MUTATION, LOGIN_MUTATION } from './Mutations';
+import './Login.css';
 
 export class Login extends Component {
   state = {
@@ -12,41 +13,48 @@ export class Login extends Component {
   render() {
     const { login, username, password } = this.state
     return (
-      <div>
-        <h4 className="mv3">{login ? 'Login' : 'Sign Up'}</h4>
-        <div className="flex flex-column">
+      <div className="login-container">
+        <h4 className="login-header">{login ? 'Login' : 'Sign Up'}</h4>
+        <div>
+          <label className="username-input-label" for="username-input">Username</label>
           <input
             value={username}
             onChange={e => this.setState({ username: e.target.value })}
             type="text"
+            name="username-input"
+            className="username-input"
             placeholder="Your username"
           />
+          <br/>
+          <label className="password-input-label" for="password-input">Password</label>
           <input
             value={password}
             onChange={e => this.setState({ password: e.target.value })}
             type="password"
+            name="password-input"
+            className="password-input"
             placeholder="Your password"
           />
         </div>
-        <div className="flex mt3">
+        <div>
           <Mutation
               mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
               variables={{ username, password }}
               onCompleted={data => this._confirm(data)}
             >
               {mutation => (
-                <div className="pointer mr2 button" onClick={mutation}>
-                  {login ? 'login' : 'create account'}
-                </div>
+                <button type="button" className="login-button" onClick={mutation}>
+                  {login ? 'Login' : 'Create Account'}
+                </button>
               )}
             </Mutation>
           <div
-            className="pointer button"
+            className="login-signup-link"
             onClick={() => this.setState({ login: !login })}
           >
             {login
-              ? 'need to create an account?'
-              : 'already have an account?'}
+              ? 'Need an account?'
+              : 'Already have an account?'}
           </div>
         </div>
       </div>

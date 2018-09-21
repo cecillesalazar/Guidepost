@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Mutation } from 'react-apollo';
 import { CREATE_ADVICE } from './Mutations';
 import { FEED_QUERY } from './Queries';
+import './CreateAdvice.css';
 
 export class CreateAdvice extends Component{
   state = {
@@ -11,7 +12,7 @@ export class CreateAdvice extends Component{
     const { customAdvice } = this.state;
     return (
       <div>
-        <input type="text" value={ customAdvice } onChange={e => this.setState({customAdvice: e.target.value})} placeholder="Create your own advice here..."/>
+        <input className="custom-advice-input" type="text" value={ customAdvice } onChange={e => this.setState({customAdvice: e.target.value})} placeholder="Create your own advice here..."/>
         <Mutation mutation={CREATE_ADVICE} variables={{ customAdvice }} update={(store, { data: { post } }) => {
           const state = store.readQuery({ query: FEED_QUERY });
           const newState = [...state.feed, post];
@@ -20,7 +21,7 @@ export class CreateAdvice extends Component{
             data: {feed: newState}
           });
         }}>
-          {createAdvice => <button onClick={createAdvice}>Publish</button>}
+          {createAdvice => <button className="publish-button" onClick={createAdvice}>Publish</button>}
         </Mutation>
       </div>
     )
