@@ -1,61 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
-import { Advice } from './Advice';
-import { GenerateAdvice } from './GenerateAdvice';
-import { CreateAdvice } from './CreateAdvice';
+import { Route } from 'react-router-dom';
+import { Dashboard } from './Dashboard';
+import { HeaderWithRouter } from './Header';
+import { Login } from './Login'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+class App extends React.Component {
 
-    this.state = {
-      customAdviceButton: false
+    render() {
+        return (
+            <div className="app-container">
+                <HeaderWithRouter />
+                <Route exact path="/Dashboard" component={Dashboard} />
+                <Route exact path="/login" component={Login} />
+            </div>
+        );
     }
-  }
-
-  toggleAdviceView(bool) {
-    this.setState({
-      customAdviceButton: bool
-    })
-  }
-
-  render() {
-    if(!this.state.customAdviceButton) {
-      return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Guidepost</h1>
-          </header>
-          <p className="App-intro">
-            Your Daily Guidepost
-          </p>
-          <GenerateAdvice />
-          <CreateAdvice />
-          <div className="custom-advice-button">
-            <p>Want to use your own guidepost for todays daily advice?</p>
-            <button type="button" onClick={() => this.toggleAdviceView(true)}>Get Advice!</button>
-          </div>
-        </div>
-      );
-    } else if(this.state.customAdviceButton) {
-      return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Guidepost</h1>
-          </header>
-          <p className="App-intro">
-            Your Custom Guidepost
-          </p>
-          <Advice />
-          <CreateAdvice />
-          <div className="custom-advice-button">
-            <p>Want to use a randomized guidepost for todays daily advice?</p>
-            <button type="button" onClick={() => this.toggleAdviceView(false)}>Get Advice!</button>
-          </div>
-        </div>
-      )
-    }
-  }
 }
 
 export default App;
