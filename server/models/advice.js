@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const AdviceSchema = new mongoose.Schema({
-  customAdvice: String
+  customAdvice: String,
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 AdviceSchema.set('toObject', {

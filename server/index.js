@@ -5,11 +5,15 @@ const UserModel = require('./models/user');
 const AdviceModel = require('./models/advice');
 const Query = require('./queries');
 const Mutation = require('./mutations');
+const User = require('./resolvers/user');
+const Advice = require('./resolvers/advice');
 const typeDefs='./schema.graphql';
 
 const resolvers = {
   Query,
-  Mutation
+  Mutation,
+  User,
+  Advice
 }
 
 const server = new GraphQLServer({
