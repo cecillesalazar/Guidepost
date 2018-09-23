@@ -1,8 +1,8 @@
 type Query {
   advice: String!
   feed: [Advice!]!
-  customAdvice(id: ID!): Advice
-  user(id: ID!): User
+  customAdvice(id: ID!): Advice!
+  user(id: ID!): User!
 }
 
 type Mutation {
