@@ -13,16 +13,15 @@ export class CreateAdvice extends Component{
     const { customAdvice } = this.state;
     return (
       <div>
-          <form onSubmit={e => {
-            e.preventDefault();
-            this.inputText.value='';
-          }}>
+          <form>
           <input
             className="custom-advice-input"
             name="input"
             type="text" value={ customAdvice }
             onChange={e => {
+              e.preventDefault();
               this.setState({customAdvice: e.target.value})
+              this.inputText.value='';
             }}
             placeholder="The early bird..."
             ref={input => this.inputText = input}
